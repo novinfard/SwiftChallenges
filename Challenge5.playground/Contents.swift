@@ -34,9 +34,12 @@ func challenge5b(input: String, lookup count: Character) -> Int {
 }
 
 func challenge5c(input: String, lookup: Character) -> Int {
-	return input.reduce(0) {
-		$1 == lookup ? $0 + 1 : $0
+	return input.reduce(0) { (result, character) in
+		character == lookup ? result + 1 : result
 	}
+//	return input.reduce(0) {
+//		$1 == lookup ? $0 + 1 : $0
+//	}
 }
 
 func challenge5d(input: String, lookup count: String) -> Int {
