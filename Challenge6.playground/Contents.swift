@@ -30,6 +30,17 @@ func challenge6b(input: String) -> String {
 	return String(used)
 }
 
+func challenge6c(input: String) -> String {
+	var used = [Character: Bool]()
+	
+	let result = input.filter {
+		used.updateValue(true, forKey: $0) == nil
+	}
+	
+	return String(result)
+}
+
+
 assert(challenge6(input: "wombat") ==  "wombat", "Challenge 4 Failed")
 assert(challenge6(input: "hello") ==  "helo", "Challenge 4 Failed")
 assert(challenge6(input: "Mississippi") ==  "Misp", "Challenge 4 Failed")
